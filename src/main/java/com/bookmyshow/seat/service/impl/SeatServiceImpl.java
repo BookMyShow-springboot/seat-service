@@ -1,13 +1,9 @@
-package com.bookmyshow.seat.service;
+package com.bookmyshow.seat.service.impl;
 
-import lombok.RequiredArgsConstructor;
+
+import com.bookmyshow.seat.service.SeatService;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class SeatServiceImpl implements SeatService {
-
-
-
 }
-

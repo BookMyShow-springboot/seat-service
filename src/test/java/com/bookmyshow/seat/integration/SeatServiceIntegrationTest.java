@@ -1,12 +1,10 @@
 package com.bookmyshow.seat.integration;
 
-import com.bookmyshow.seat.dto.*;
 import com.bookmyshow.seat.entity.*;
 import com.bookmyshow.seat.exception.SeatLockConflictException;
 import com.bookmyshow.seat.exception.SeatNotAvailableException;
 import com.bookmyshow.seat.exception.ShowNotFoundException;
 import com.bookmyshow.seat.repository.*;
-import com.bookmyshow.seat.service.SeatService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
