@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,9 +24,6 @@ class SeatServiceIntegrationTest {
 
     @Autowired
     private SeatService seatService;
-
-    @Autowired
-    private ShowRepository showRepository;
 
     @Autowired
     private ShowSeatRepository showSeatRepository;
@@ -47,7 +43,6 @@ class SeatServiceIntegrationTest {
     void setUp() {
         showSeatRepository.deleteAll();
         seatRepository.deleteAll();
-        showRepository.deleteAll();
         screenRepository.deleteAll();
 
         Screen screen = new Screen();
@@ -58,13 +53,8 @@ class SeatServiceIntegrationTest {
         screen = screenRepository.save(screen);
         screenId = screen.getId();
 
-        Show show = new Show();
-        show.setScreenId(screenId);
-        show.setMovieId(200L);
-        show.setStartTime(LocalDateTime.now().plusHours(1));
-        show.setEndTime(LocalDateTime.now().plusHours(3));
-        show = showRepository.save(show);
-        showId = show.getId();
+        // seat-service no longer persists Show; we just pick an ID and allocate seats for it.
+        showId = 1000L;
 
         Seat seat1 = new Seat();
         seat1.setScreenId(screenId);

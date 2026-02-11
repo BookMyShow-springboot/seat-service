@@ -1,6 +1,5 @@
 package com.bookmyshow.seat.exception;
 
-import com.bookmyshow.seat.dto.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
